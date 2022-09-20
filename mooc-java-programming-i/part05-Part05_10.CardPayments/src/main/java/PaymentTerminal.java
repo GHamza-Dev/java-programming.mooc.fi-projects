@@ -32,7 +32,7 @@ public class PaymentTerminal {
         // increase the amount of cash by the price of an affordable mean and return the change
         // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
         if (card.takeMoney(2.50)) {
-            this.money+=2.50;
+            //this.money+=2.50;
             this.affordableMeals++;
             return true;
         }
@@ -59,7 +59,7 @@ public class PaymentTerminal {
         // increase the amount of cash by the price of a hearty mean and return the change
         // if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
         if (card.takeMoney(4.30)) {
-            this.money+=4.30;
+            //this.money+=4.30;
             this.heartyMeals++;
             return true;
         }
@@ -67,7 +67,11 @@ public class PaymentTerminal {
     }
 
     public void addMoneyToCard(PaymentCard card, double sum) {
+        if (sum<0){
+            return;
+        }
         card.addMoney(sum);
+        this.money+=sum;
     }
 
     @Override
