@@ -3,6 +3,7 @@ public class Main {
 
     public static void main(String[] args) {
         // write experimental main programs here
+        // Test 1
         /*
         PaymentCard petesCard = new PaymentCard(10);
 
@@ -15,6 +16,8 @@ public class Main {
         System.out.println("successfully withdrew: " + wasSuccessful);
         System.out.println("money " + petesCard.balance());
          */
+        // Test 2
+        /*
         PaymentTerminal unicafeExactum = new PaymentTerminal();
 
         double change = unicafeExactum.eatAffordably(10);
@@ -25,6 +28,23 @@ public class Main {
 
         change = unicafeExactum.eatHeartily(4.3);
         System.out.println("remaining change " + change);
+
+        System.out.println(unicafeExactum);
+         */
+        // Test 3
+        PaymentTerminal unicafeExactum = new PaymentTerminal();
+
+        double change = unicafeExactum.eatAffordably(10);
+        System.out.println("remaining change: " + change);
+
+        PaymentCard annesCard = new PaymentCard(7);
+
+        boolean wasSuccessful = unicafeExactum.eatHeartily(annesCard);
+        System.out.println("there was enough money: " + wasSuccessful);
+        wasSuccessful = unicafeExactum.eatHeartily(annesCard);
+        System.out.println("there was enough money: " + wasSuccessful);
+        wasSuccessful = unicafeExactum.eatAffordably(annesCard);
+        System.out.println("there was enough money: " + wasSuccessful);
 
         System.out.println(unicafeExactum);
     }
